@@ -15,8 +15,8 @@ void main() {
     i++;
   } while (i < v.length);
 
-  do {
-    print(v[i]);
-  } while (i !=
-      i); // this will only print the h.. because the do loop will execute and then condition is check
+  // do {
+  //   print(v[i]);
+  // } while (i !=
+  //     i); // this will only print the h.. because the do loop will execute and then condition is check
 }
