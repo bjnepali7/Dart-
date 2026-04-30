@@ -1,0 +1,692 @@
+# 📚 DART PROGRAMMING - LEARNING NOTES
+*Organized Day by Day Learning Progress*
+
+---
+
+## 📅 DAY 1: INTRODUCTION & VARIABLES
+
+### Topics Covered:
+- **print()** - Console output
+- **Variables basics** - Storing data
+
+### Syntax & Concepts:
+
+#### 1. Print Statement
+```dart
+print("Hello, World!");
+String greeting = "Welcome to Dart programming!";
+print(greeting);
+```
+
+#### 2. VAR (Type Inference)
+```dart
+var firstVal = 10;
+print(firstVal);  // Output: 10
+// Cannot change data type after assignment
+```
+
+#### 3. DYNAMIC (Type Changing)
+```dart
+dynamic secondVal = "hello";
+print(secondVal);   // Output: hello
+secondVal = 20;
+print(secondVal);   // Output: 20 (type changed!)
+// Can change data type after assignment
+```
+
+#### 4. FINAL (Runtime Constant)
+```dart
+final Sec = DateTime.now();
+print(Sec);  // Current date and time
+// Value assigned at runtime, cannot change later
+```
+
+#### 5. CONST (Compile-Time Constant)
+```dart
+const pi = 3.14;
+print(pi);  // Output: 3.14
+// const DateTime.now() ❌ INVALID (runtime value)
+```
+
+---
+
+## 📅 DAY 2: STRING INTERPOLATION & BASIC OUTPUT
+
+### Topics Covered:
+- **String Interpolation** - Embedding variables in strings
+- **String literals** - Working with text
+
+### Syntax & Concepts:
+
+#### 1. Simple Variable Interpolation
+```dart
+String name = "hello";
+int id = 2;
+print("My name is $name and my id is ${id * 2}");
+// Output: My name is hello and my id is 4
+```
+
+#### 2. Expression Interpolation
+```dart
+print("Result: ${10 + 20}");  // Output: Result: 30
+```
+
+#### 3. Escape Sequences
+```dart
+print('$greeting\nyoo!');  // \n creates new line
+```
+
+---
+
+## 📅 DAY 3: CONTROL FLOW - IF/ELSE STATEMENTS
+
+### Topics Covered:
+- **Conditional statements** - Decision making
+- **Global vs Local variables** - Scope
+
+### Syntax & Concepts:
+
+#### 1. Basic If Statement
+```dart
+if (condition) {
+  // code if true
+}
+```
+
+#### 2. If-Else Statement
+```dart
+if (condition) {
+  // code if true
+} else {
+  // code if false
+}
+```
+
+#### 3. If-Else If-Else Chain
+```dart
+bool isAdult = false;  // GLOBAL variable
+int age = 12;
+
+if (isAdult) {
+  print("You are an adult.");
+} else if (age >= 18) {
+  print("You are an adult.");
+} else {
+  print("You are a child");
+}
+```
+
+#### 4. Comparison Example
+```dart
+int age = 12;
+if (age == 12) {
+  print("haha");
+} else {
+  print("nono");
+}
+```
+
+#### Key Points:
+- Global variables: Accessible from anywhere
+- Local variables (in main): Only accessible within scope
+- Boolean variables: Store true/false values
+
+---
+
+## 📅 DAY 4: FUNCTIONS & REUSABLE CODE
+
+### Topics Covered:
+- **Functions** - Reusable code blocks
+- **Return values** - Function outputs
+- **Parameters** - Function inputs
+
+### Syntax & Concepts:
+
+#### 1. Function with Return Type
+```dart
+int add(int x, int y) {
+  int sum = x + y;
+  print(sum);
+  return sum;
+}
+
+void main() {
+  add(4, 5);  // Output: 9
+}
+```
+
+#### 2. Function without Explicit Return Type
+```dart
+sub(int v, int y) {
+  var data = v - y;
+  return data;
+}
+
+void main() {
+  var subb = sub(5, 4);
+  print("the subtraction is $subb");  // Output: the subtraction is 1
+}
+```
+
+#### 3. Storing Function Results
+```dart
+var result = add(4, 5);
+print("Result: $result");
+```
+
+---
+
+## 📅 DAY 5: LISTS & COLLECTIONS
+
+### Topics Covered:
+- **Lists** - Ordered collections
+- **Indexing** - Accessing elements
+- **forEach()** - Iterating lists
+
+### Syntax & Concepts:
+
+#### 1. Basic List Declaration
+```dart
+List a = [1, 2, 3, 4];
+List<double> b = [1.2, 3.6, 4];
+```
+
+#### 2. Typed Lists (Recommended)
+```dart
+List<int> numbers = [1, 2, 3, 4];
+List<String> names = ["Alice", "Bob"];
+```
+
+#### 3. Accessing Elements (0-based indexing)
+```dart
+List a = [10, 20, 30];
+print(a[0]);  // Output: 10
+print(a[1]);  // Output: 20
+```
+
+#### 4. forEach() Method
+```dart
+List a = [1, 2, 3, 4];
+a.forEach((num) {
+  print(num);
+});
+// Output: 1, 2, 3, 4
+```
+
+#### Key Concepts:
+- **Ordered collections**: Maintain insertion order
+- **Mutable**: Can be modified after creation
+- **Immutable**: Cannot be modified after creation
+- **0-based indexing**: First element at index 0
+- **list.length**: Returns the number of elements
+
+---
+
+## 📅 DAY 6: MAPS & KEY-VALUE PAIRS
+
+### Topics Covered:
+- **Maps** - Key-value collections
+- **Dynamic values** - Mixed data types
+
+### Syntax & Concepts:
+
+#### 1. Map Declaration
+```dart
+Map<String, dynamic> user = {
+  'name': "Bijay",
+  "age": 30
+};
+print(user);
+// Output: {name: Bijay, age: 30}
+```
+
+#### 2. Accessing Map Values
+```dart
+print(user['name']);   // Output: Bijay
+print(user['age']);    // Output: 30
+```
+
+#### Key Concepts:
+- **Unordered**: No guaranteed order
+- **Key-value pairs**: Each key maps to a value
+- **Unique keys**: Each key appears only once
+- **dynamic keyword**: Values can be different types
+
+---
+
+## 📅 DAY 7: LOOPS - FOR, WHILE, DO-WHILE
+
+### Topics Covered:
+- **For loops** - Known iteration count
+- **While loops** - Unknown iteration count
+- **Do-while loops** - Execute at least once
+
+### Syntax & Concepts:
+
+#### 1. FOR LOOP (Entry Controlled)
+```dart
+for (int i = 0; i < condition; i++) {
+  // code to execute
+}
+
+// Example:
+String val = "hello";
+for (int i = 0; i < val.length; i++) {
+  print(val[i]);
+}
+// Output: h, e, l, l, o
+```
+
+#### Key Points:
+- Entry controlled: Condition checked BEFORE execution
+- Ideal for known iteration count
+- val.length returns string length
+
+#### 2. WHILE LOOP (Entry Controlled)
+```dart
+while (condition) {
+  // code to execute
+  increment/decrement;
+}
+
+// Example:
+String val = "hello";
+int i = 0;
+while (i < val.length) {
+  print(val[i]);
+  i++;
+}
+```
+
+#### Key Points:
+- Entry controlled: Condition checked BEFORE execution
+- Manual increment/decrement required
+- ⚠️ Missing increment = INFINITE LOOP
+
+#### 3. DO-WHILE LOOP (Exit Controlled)
+```dart
+do {
+  // code to execute
+  increment/decrement;
+} while (condition);
+
+// Example:
+String val = "bijay";
+int i = 0;
+do {
+  print(val[i]);
+  i++;
+} while (i < val.length);
+```
+
+#### Key Points:
+- Exit controlled: Code runs FIRST, condition checked AFTER
+- Executes at least ONCE
+- Best when minimum 1 execution guaranteed
+
+---
+
+## 📅 DAY 8: SWITCH STATEMENTS
+
+### Topics Covered:
+- **Switch statements** - Multi-way branching
+- **Case labels** - Pattern matching
+
+### Syntax & Concepts:
+
+#### 1. Switch Statement Structure
+```dart
+switch (variable) {
+  case value1:
+    // code if variable == value1
+  case value2:
+    // code if variable == value2
+  default:
+    // code if no cases match
+}
+```
+
+#### 2. Example
+```dart
+int a = 0;
+switch (a) {
+  case 0:
+    print("the value is zero");
+  case 1:
+    print("the value is 1");
+  default:
+    print("this is a world to me");
+}
+// Output: the value is zero
+```
+
+#### Key Points:
+- Tests value against multiple cases
+- Cleaner than multiple if-else statements
+- default: Runs if no case matches
+
+---
+
+## 📅 DAY 9: NULL SAFETY
+
+### Topics Covered:
+- **Nullable types** - Variables that can be null
+- **Non-nullable types** - Must have a value
+- **Null coalescing** - Providing defaults
+
+### Syntax & Concepts:
+
+#### 1. Nullable Type Declaration
+```dart
+int? a;  // Can be null
+print(a);  // Output: null
+```
+
+#### 2. Non-Nullable Type Declaration
+```dart
+int b;
+// ERROR ❌ Must be initialized
+// print(b);
+```
+
+#### 3. Null-Coalescing Operator (??)
+```dart
+int? a = null;
+int m = a ?? 2;  // If a is null, m = 2; else m = a
+print(m);  // Output: 2
+```
+
+#### Another Example:
+```dart
+int? x = 10;
+int y = x ?? 0;
+print(y);  // Output: 10 (x is not null)
+```
+
+#### Key Points:
+- `?` indicates variable CAN be null
+- `??` provides default value if null
+- Prevents null reference errors
+
+---
+
+## 📅 DAY 10: NAMED PARAMETERS
+
+### Topics Covered:
+- **Named parameters** - Parameter names required
+- **Required keyword** - Making parameters mandatory
+- **Function flexibility** - Parameters in any order
+
+### Syntax & Concepts:
+
+#### 1. Named Parameters Syntax
+```dart
+returnType functionName({
+  required param1,
+  required param2,
+  optional param3
+}) {
+  // function body
+}
+```
+
+#### 2. Example
+```dart
+introduction({
+  required String name,
+  required int age,
+  String? address
+}) {
+  print("My name is $name and my age is $age");
+  print("Address: $address");
+}
+
+void main() {
+  introduction(name: "Bijay", age: 12);
+}
+```
+
+#### 3. Parameters in Any Order
+```dart
+introduction(age: 12, name: "Bijay");  // ✓ Works!
+introduction(name: "Bijay", age: 12);  // ✓ Also works!
+```
+
+#### Key Points:
+- Defined with curly braces `{}`
+- Optional by default
+- Use `required` to make mandatory
+- More readable than positional parameters
+- Can pass in ANY order
+
+#### Comparison:
+```dart
+// Positional Parameters (fixed order)
+void func(int a, int b) {}
+func(1, 2);  // Must be in order
+
+// Named Parameters (any order)
+void func({required int a, required int b}) {}
+func(a: 1, b: 2);  // Any order ✓
+func(b: 2, a: 1);  // Any order ✓
+```
+
+---
+
+## 📅 DAY 11: ARROW SYNTAX (LAMBDA FUNCTIONS)
+
+### Topics Covered:
+- **Arrow syntax** - Concise function writing
+- **Single expression functions** - Shorter code
+- **Return value shorthand** - Implicit returns
+
+### Syntax & Concepts:
+
+#### 1. Arrow Syntax Basics
+```dart
+returnType functionName(parameters) => expression;
+```
+
+#### 2. Regular vs Arrow Syntax
+```dart
+// Regular function:
+int multiply(int a, int b) {
+  return a * b;
+}
+
+// Arrow syntax:
+int multiply(int a, int b) => a * b;
+```
+
+#### 3. Usage Example
+```dart
+Function fun2 = multiply;
+fun2(2, 4);  // Output: 8
+```
+
+#### 4. With List Operations
+```dart
+List<int> numbers = [3, 1, 4, 1, 5];
+numbers.sort((a, b) => a.compareTo(b));
+print(numbers);  // Output: [1, 1, 3, 4, 5]
+```
+
+#### Key Points:
+- Used for functions with single expression
+- Automatically returns the result
+- Makes code more concise and readable
+- Commonly used in callbacks
+
+---
+
+## 📅 DAY 12: ANONYMOUS FUNCTIONS (LAMBDA FUNCTIONS)
+
+### Topics Covered:
+- **Anonymous functions** - Functions without names
+- **Function callbacks** - Functions as arguments
+- **Lambda expressions** - Concise anonymous functions
+
+### Syntax & Concepts:
+
+#### 1. Basic Anonymous Function
+```dart
+Function fun1 = () {
+  print("hello mannn");
+};
+fun1();  // Output: hello mannn
+```
+
+#### 2. Anonymous Function with Parameters
+```dart
+Function add = (int a, int b) {
+  return a + b;
+};
+print(add(5, 3));  // Output: 8
+```
+
+#### 3. Arrow Syntax Anonymous Function
+```dart
+Function multiply = (int a, int b) => a * b;
+print(multiply(4, 5));  // Output: 20
+```
+
+#### 4. With List Operations
+```dart
+List<int> numbers = [1, 5, 7, 8, 2, 4];
+numbers.sort((a, b) => a.compareTo(b));
+print(numbers);  // Output: [1, 2, 4, 5, 7, 8]
+```
+
+#### 5. Real-World Example (Flutter)
+```dart
+FloatingActionButton(
+  onPressed: () => print("Button Pressed"),
+  child: Icon(Icons.add),
+)
+```
+
+#### Key Points:
+- Functions without names
+- Used for one-time operations
+- Passed as arguments to other functions
+- Makes code cleaner (no namespace pollution)
+- Common with list operations: sort(), forEach(), map(), filter()
+
+---
+
+## 📅 DAY 13: FUNCTION KEYWORD & HIGHER-ORDER FUNCTIONS
+
+### Topics Covered:
+- **Function as data type** - Storing functions in variables
+- **Higher-order functions** - Functions that work with functions
+- **Functional programming** - Advanced code patterns
+
+### Syntax & Concepts:
+
+#### 1. Function Keyword
+```dart
+Function variableName = functionReference;
+```
+
+#### 2. Example
+```dart
+int add(int a, int b) {
+  var sum = a + b;
+  print("The addition is $sum");
+  return sum;
+}
+
+void main() {
+  Function fun = add;  // Store function reference
+  fun(4, 5);          // Call through variable
+  // Output: The addition is 9
+}
+```
+
+#### 3. Passing Functions as Arguments
+```dart
+void execute(Function callback) {
+  callback();
+}
+
+void main() {
+  execute(() => print("Function passed!"));
+}
+```
+
+#### 4. Higher-Order Function Example
+```dart
+List<int> map(List<int> list, Function transform) {
+  List<int> result = [];
+  for (int item in list) {
+    result.add(transform(item));
+  }
+  return result;
+}
+
+void main() {
+  List nums = [1, 2, 3];
+  var doubled = map(nums, (x) => x * 2);
+  print(doubled);  // Output: [2, 4, 6]
+}
+```
+
+#### Key Points:
+- Functions are first-class citizens
+- Can be assigned to variables
+- Can be passed as arguments
+- Can be returned from functions
+- Enables powerful functional programming patterns
+- Creates more abstract and reusable code
+
+---
+
+## 🎯 QUICK REFERENCE - KEY TAKEAWAYS
+
+### 1. **Data Types**
+   - `var`: Type inference, cannot change
+   - `dynamic`: Can change type
+   - `final`: Runtime constant, cannot change
+   - `const`: Compile-time constant, cannot change
+
+### 2. **String Operations**
+   - `$variable`: Simple interpolation
+   - `${expression}`: Expression interpolation
+   - `\n`: New line
+
+### 3. **Control Flow**
+   - `if-else`: Conditional execution
+   - `switch`: Multi-way branching
+   - Comparison operators: `==`, `!=`, `>`, `<`, `>=`, `<=`
+
+### 4. **Loops**
+   - `for`: Known iteration count (entry controlled)
+   - `while`: Unknown iteration count (entry controlled)
+   - `do-while`: At least once (exit controlled)
+
+### 5. **Collections**
+   - `List<T>`: Ordered, indexed, mutable
+   - `Map<K, V>`: Key-value pairs, unordered
+
+### 6. **Functions**
+   - Positional parameters: Fixed order
+   - Named parameters: Any order with names
+   - Arrow syntax: Concise single-expression functions
+   - Anonymous functions: Unnamed, often used as callbacks
+
+### 7. **Null Safety**
+   - `Type?`: Nullable type
+   - `??`: Null coalescing operator
+   - Prevents null reference errors
+
+### 8. **Advanced Features**
+   - **Named parameters** for readability
+   - **Arrow syntax** for concise code
+   - **Anonymous functions** for callbacks
+   - **Function keyword** treating functions as data
+   - **Higher-order functions** for functional programming
+
+---
+
+*Last Updated: April 30, 2026*
+*Organized for Notion - Day by Day Learning Progress*
