@@ -15,3 +15,7 @@ sub(int v, int y) {
   var data = v - y;
   return data;
 }
+
+divide(int x, [int?y]) {// if we do not wannt  to give value in positional parameter(optional parameter)
+  print(x /(y??0));
+}
